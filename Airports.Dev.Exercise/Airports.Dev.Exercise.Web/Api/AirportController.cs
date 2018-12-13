@@ -2,6 +2,8 @@
 using Airports.Dev.Exercise.Services.Services;
 using System;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 
 namespace Airports.Dev.Exercise.Web.Api
@@ -15,7 +17,7 @@ namespace Airports.Dev.Exercise.Web.Api
             _airportService = new AirportService();
         }
         
-        public string GetDistance([FromUri] string iataCode1, [FromUri] string iataCode2)
+        public HttpResponseMessage GetDistance([FromUri] string iataCode1, [FromUri] string iataCode2)
         {            
             try
             {
@@ -25,20 +27,15 @@ namespace Airports.Dev.Exercise.Web.Api
                     var airportByIata1 = airports.FirstOrDefault(x => x.IATA.Equals(iataCode1, StringComparison.InvariantCultureIgnoreCase));
                     var airportByIata2 = airports.FirstOrDefault(x => x.IATA.Equals(iataCode2, StringComparison.InvariantCultureIgnoreCase));
 
-                    return _airportService.GetDistanceBetweenTwoAirport(airportByIata1, airportByIata2);
+                    return Request.CreateResponse(HttpStatusCode.OK, _airportService.GetDistanceBetweenTwoAirport(airportByIata1, airportByIata2));
                 }
 
-                return string.Empty;
+                return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
             }
-        }
-
-        public string Get()
-        {
-            return "Hola";
         }
     }
 }
