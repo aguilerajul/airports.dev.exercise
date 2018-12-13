@@ -16,6 +16,12 @@ namespace Airports.Dev.Exercise.Web
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Routes.MapHttpRoute(
+                name: "AirportDistanceApi",
+                routeTemplate: "api/{controller}/{iataCode1}/{iataCode2}",
+                defaults: new { iataCode1 = RouteParameter.Optional, iataCode2 = RouteParameter.Optional }
+            );
         }
     }
 }

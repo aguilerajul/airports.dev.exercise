@@ -35,5 +35,10 @@ namespace Airports.Dev.Exercise.Web.Api
                 return ex.Message;
             }
         }
+
+        public string Get()
+        {
+            return "Hola";
+        }
     }
 }
