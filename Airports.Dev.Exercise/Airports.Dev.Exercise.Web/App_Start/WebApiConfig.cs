@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace Airports.Dev.Exercise.Web
@@ -22,6 +23,8 @@ namespace Airports.Dev.Exercise.Web
                 routeTemplate: "api/{controller}/{iataCode1}/{iataCode2}",
                 defaults: new { iataCode1 = RouteParameter.Optional, iataCode2 = RouteParameter.Optional }
             );
+
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
         }
     }
 }
