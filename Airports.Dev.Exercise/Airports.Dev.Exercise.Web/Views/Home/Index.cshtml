@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Airports Exercise - Introduction</h1>
+    <p class="lead">
+        In this exercise you will create a basic .NET solution from scratch.
+        <br />
+        Create this exercise using C# and Visual Studio (2015 or higher).
+        <br />
+        This document describes the components, how you structure your solution is up to you. We expect you to do this in about 8 hours.
+    </p>    
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>The web application</h2>
+        <p>
+            This application retrieves the content of a JSON feed that exposes airports.
+            <ul>
+                <li>
+                    Download the content using the HttpClient class from the Microsoft.Net.Http NuGet package to download the JSON.
+                </li>
+                <li>
+                    The program should get the airports from this JSON feed: https://raw.githubusercontent.com/jbrooksuk/JSON-Airports/master/airports.json
+                </li>
+                <li>
+                    Show a list of all the European airports and offer the functionality to filter the list on country. Retrieving the list of the airports should only happen once every 5 minutes. A response header should be used to indicate whether the application got its data from the JSON feed.
+                </li>
+                <li>
+                    The web application should be an MVC 5 application.
+                </li>
+                <li>
+                    The name of the response header should be ‘from-feed’.
+                </li>
+                <li>
+                    For extra points:
+                    <ul>
+                        <li>
+                            Create a view that shows the distance between two airports, airports are identified on IATA code.                            
+                        </li>
+                        <li>
+                            The application should accept two airports in the URL.
+                        </li>
+                    </ul>
+
+                </li>
+
+            </ul>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>What we will look for</h2>
+        <ul>
+            <li>
+                Using common frameworks
+            </li>
+            <li>
+                Cleverness & performance
+            </li>
+            <li>
+                Separation of concerns
+            </li>
+            <li>
+                The application should build and run on other computers
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h2>Finished?</h2>
+        <p>Clean out the bin folders and zip the solution. Share your solution via WeTransfer or an online git repository.</p>
+    </div>
+</div>

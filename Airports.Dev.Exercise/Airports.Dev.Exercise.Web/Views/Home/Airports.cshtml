@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Airports.Dev.Exercise.Services.Models.Airport>
+
+@{
+    ViewBag.Title = "Airports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Airports</h2>
+<div class="row">
+    @using (Html.BeginForm("Airports", "Home", FormMethod.Post))
+    {
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="countryName" name="countryName" />
+        </div>
+        <div class="col-xs-3">
+            <input type="submit" class="form-control btn btn-primary" value="Filter" />
+        </div>
+    }
+</div>
+<div class="row">    
+    <div class="col-xs-12 airport-margin">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IATA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ISO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Continent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Size)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+            </tr>
+
+            @foreach (var airport in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => airport.IATA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => airport.ISO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => airport.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => airport.Continent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => airport.Lat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => airport.Lon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => airport.Size)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => airport.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => airport.Status)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+</div>
+
+
