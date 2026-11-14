@@ -39,7 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=15.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005">
-      <HintPath>..\packages\AutoMapper.15.1.1\lib\netstandard2.0\AutoMapper.dll</HintPath>
+      <HintPath>..\packages\AutoMapper.15.1.4\lib\netstandard2.0\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
